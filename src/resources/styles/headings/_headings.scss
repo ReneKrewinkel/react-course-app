@@ -1,0 +1,12 @@
+@use '../functions/functions' as functions;
+@use '../tokens/config' as config;
+@use 'sass:map';
+
+@each $variant in map.get(config.$headings, 'variant') {
+  @each $t, $s in $variant {
+    #{$t} {
+      font-family: 'heading';
+      font-size: functions.pxToRem($s);
+    }
+  }
+}

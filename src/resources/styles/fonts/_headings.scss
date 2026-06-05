@@ -1,0 +1,12 @@
+@use '../tokens/config' as config;
+@use 'sass:map';
+
+$h_type: map.get(config.$headings, 'type');
+$h_uri: map.get(config.$headings, 'uri');
+/*! heading */
+@font-face {
+  font-family: '#{$h_type}';
+  src: url($h_uri + '.woff') format('woff'),
+    /* Modern Browsers */ url($h_uri + '.woff2') format('woff2'),
+    /* Modern Browsers */;
+}
