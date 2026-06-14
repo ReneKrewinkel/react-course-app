@@ -153,6 +153,6 @@ _index.scss
 index.tsx
 ```
 
-The generated `Logo` files still contain TODO comments for adapting the interface, mock data, story args, test expectations, and component implementation.
+The generated `Logo` files were completed into a working atom with a typed anchor API, Storybook story, colocated test, and shared SCSS styling.
 
 A GitHub Actions workflow was added at `.github/workflows/atomic-todo-to-issue.yml` to convert TODO comments into issues on push.

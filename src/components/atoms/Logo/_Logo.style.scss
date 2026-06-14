@@ -1,30 +1,78 @@
+@use '../../../resources/styles/utility/fonts' as typography;
+
 .Logo {
+  align-items: center;
+  color: var(--fg-black);
+  display: inline-flex;
+  gap: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
 
+  &:hover {
+    color: var(--fg-bright-green-100);
+  }
+}
 
+.Logo__image {
+  display: block;
+  flex-shrink: 0;
+}
 
-  // XS - Phone
-  @media (max-width: 480px) {
+.Logo__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
 
+.Logo__wordmark {
+  @include typography.dynamic-text-bold(1.25rem);
+  line-height: 1.1;
+}
+
+.Logo__subtitle {
+  @include typography.dynamic-text-regular(0.875rem);
+  color: var(--fg-black);
+  line-height: 1.4;
+  opacity: var(--opacity-muted);
+}
+
+.Logo--s {
+  gap: 0.75rem;
+
+  .Logo__image {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
-  // S - Tablet
-  @media (max-width: 768px) {
-
+  .Logo__wordmark {
+    @include typography.dynamic-text-bold(1rem);
   }
 
-  // M - Tablet/Laptop
-  @media (max-width: 1024px) {
+  .Logo__subtitle {
+    @include typography.dynamic-text-regular(0.75rem);
+  }
+}
 
+.Logo--m {
+  .Logo__image {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.Logo--l {
+  gap: 1.25rem;
+
+  .Logo__image {
+    height: 4rem;
+    width: 4rem;
   }
 
-  // L - High Res
-  @media (max-width: 1200px) {
-
+  .Logo__wordmark {
+    @include typography.dynamic-text-bold(1.5rem);
   }
 
-  // XL - Ultra High Res
-  @media (min-width: 1201px) {
-
+  .Logo__subtitle {
+    @include typography.dynamic-text-regular(1rem);
   }
-
 }

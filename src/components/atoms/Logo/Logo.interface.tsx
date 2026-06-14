@@ -1,10 +1,10 @@
-import React from 'react'
+import type { ComponentPropsWithoutRef } from 'react'
 
-/// TODO: Adapt interface for Logo
-export interface LogoInterface {
-    props?: any,  /// refactor to appropriate (destructured) props
-    style?: React.CSSProperties | any,
-    type?: string,
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl',
+export interface LogoInterface extends Omit<ComponentPropsWithoutRef<'a'>, 'children'> {
+    imageAlt?: string,
+    imageSrc?: string,
+    size?: 's' | 'm' | 'l',
+    subtitle?: string,
     testID?: string,
+    wordmark?: string,
 }

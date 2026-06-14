@@ -1,16 +1,42 @@
-// import { useState, useEffect, useContext } from 'react'
+import reactLogo from '@/assets/react.svg'
 import type { LogoInterface } from './Logo.interface'
 
-/// TODO: update interface/arguments for Logo
-const Logo = ({testID, style, type, size, props }:LogoInterface) => {
+const Logo = ({
+    'aria-label': ariaLabel,
+    className,
+    href = '/',
+    imageAlt = 'React Course App logo',
+    imageSrc = reactLogo,
+    size = 'm',
+    subtitle = 'Atomic structure for your React training app',
+    testID,
+    wordmark = 'React Course App',
+    ...anchorProps
+}: LogoInterface) => {
+    const classes = ['Logo', `Logo--${size}`, className].filter(Boolean).join(' ')
 
     return(
-        <div data-testid={ testID }
-             data-object-type={ type ?? ""}
-             className={ `Logo` }>
-        </div>
-    )
+        <a
+            { ...anchorProps }
+            aria-label={ ariaLabel ?? wordmark }
+            className={ classes }
+            data-testid={ testID }
+            href={ href }
+        >
+            <img
+                alt={ imageAlt }
+                className="Logo__image"
+                height="48"
+                src={ imageSrc }
+                width="48"
+            />
 
+            <span className="Logo__copy">
+                <span className="Logo__wordmark">{ wordmark }</span>
+                { subtitle ? <span className="Logo__subtitle">{ subtitle }</span> : null }
+            </span>
+        </a>
+    )
 }
 
 export default Logo

@@ -1,7 +1,10 @@
-const App = () => {
+import { Logo } from '@/components'
 
+const App = () => {
   return(
-    <div>App</div>
+    <main>
+      <Logo />
+    </main>
   )
 }
 

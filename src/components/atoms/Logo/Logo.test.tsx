@@ -1,10 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { renderToStaticMarkup } from 'react-dom/server'
-// import { LogoInterface } from './Logo.interface'
 import Logo from './Logo'
 import { LogoMock } from './Logo.mock'
 
-/// TODO: fix test based upon interface for Logo
 const testID = "Logo-" + Math.floor(Math.random()*90000) + 10000
 
 describe("Logo", () => {
@@ -14,6 +12,10 @@ describe("Logo", () => {
           <Logo testID={testID} {...LogoMock} />
         )
         expect(rendered).toContain(`data-testid="${testID}"`)
+        expect(rendered).toContain('React Course App')
+        expect(rendered).toContain('Atomic structure for your React training app')
+        expect(rendered).toContain('href="/"')
+        expect(rendered).toContain('Logo--m')
     })
 
 })
